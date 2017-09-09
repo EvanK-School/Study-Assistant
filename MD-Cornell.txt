@@ -1,0 +1,11 @@
+[//]: # (def)   - define a term or term list
+[//]: # (mat)   - define a math equation/expression
+[//]: # (que)   - question (inside "()" but can be
+                  multiple lines)
+[//]: # (ans)   - example answer to previous question
+
+[//]: # (li)	- start "notable" list * name="$name" can be added inside () *
+[//]: # (/li)	- end "notable" list 
+
+[//]: # (stylesheet=<path-to-seperate-sheet) - reference seperate note-markup sheet
+[//]: # (CommentID=<ID>)                     - to be used with seperate stylesheet (see DOCS)
