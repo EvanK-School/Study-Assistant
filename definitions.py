@@ -6,6 +6,8 @@ definitions = {
     'a': 'apple',
     'b': 'banana',
     'c': 'cherry',
+    'd': 'dragon fruit',
+    'e': 'elderberry'
 }
 
 def choice(mydic, string, num=4):
@@ -28,7 +30,12 @@ def choice(mydic, string, num=4):
     for x in range(num):
         foo = mydic[answ.pop(rd.randint(0, len(answ) - 1))]
         choices.append(foo)
-        print(alpha[x] + ' ' + str(foo))
+
+    if not(rslt in choices):
+        index = rd.randint(0, 3)
+        choices[index] = rslt
+
+    for x, y in enumerate(choices):    print(alpha[x] + ' ' + str(y))
 
     print()
 
@@ -36,5 +43,6 @@ def choice(mydic, string, num=4):
 
     print()
     print(choices[alpha.index(answer)] == rslt)
+    print()
 
 choice(definitions, 'b')
