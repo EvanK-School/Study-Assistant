@@ -41,6 +41,9 @@ def choice(mydic, string, num=4):
 
     answer = input('\007>>> ')
 
+    if len(answer) > 2: answer = answer[:2]
+    if not(answer[1] == '.'): answer = answer[0] + '.'
+
     print()
     print(choices[alpha.index(answer)] == rslt)
     print()
