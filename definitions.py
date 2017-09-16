@@ -10,6 +10,8 @@ definitions = {
     'e': 'elderberry'
 }
 
+# For only a single mutiple choice question
+# Should be strung together for multiple questions
 def choice(mydic, string=None, num=4):
     if not(2 < num < 26):
         num = 4
@@ -46,5 +48,22 @@ def choice(mydic, string=None, num=4):
     else:
         print(False)
     print()
+
+# Note that if only definitions.py is imported,
+# will default to import definitions
+# **Note that style syntax needs to be added to DOCS.md**
+def impdoc(name, doctype='def'):
+    myfile = open(name, 'r')
+    style = eval(myfile.readline())
+    if doctype == 'auto': style['type']
+    if not(style['type'] == doctype):
+        return('error: doctypes do not match')
+
+    if doctype == 'def':
+        info = ''.join(myfile.read().split('\n'))
+        info = '{' + info + '}'
+        return(eval('info'))
+
+    myfile.close()
 
 choice(definitions)
