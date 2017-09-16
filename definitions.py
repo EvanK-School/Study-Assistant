@@ -36,6 +36,7 @@ def choice(mydic, string=None, num=4):
     answer = input('\007>>> ')
     if not(answer == rslt):
         if len(answer) > 2: answer = answer[:2]
+        if len(answer) < 2: answer += '.'
         if not(answer[1] == '.'): answer = answer[0] + '.'
     print()
     if answer == rslt:
