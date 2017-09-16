@@ -62,7 +62,7 @@ def impdoc(name, doctype='def'):
     if doctype == 'def':
         info = ''.join(myfile.read().split('\n'))
         info = '{' + info + '}'
-        return(eval('info'))
+        return(eval(info))
 
     myfile.close()
 
