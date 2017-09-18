@@ -46,7 +46,7 @@ def choice(mydic, string=None, num=4):
     elif choices[alpha.index(answer)] == rslt:
         print(choices[alpha.index(answer)] == rslt)
     else:
-        print(False)
+        print(False, rslt, sep='\n')
     print()
 
 # Note that if only definitions.py is imported,
