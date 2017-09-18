@@ -65,5 +65,3 @@ def impdoc(name, doctype='def'):
         return(eval(info))
 
     myfile.close()
-
-choice(definitions)
