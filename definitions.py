@@ -65,3 +65,27 @@ def impdoc(name, doctype='def'):
         return(eval(info))
 
     myfile.close()
+
+def expdoc(mydic, name, doctype='def'):
+    myfile = open(name, 'r')
+    style = eval(myfile.readline())
+    if doctype == 'auto': style['type']
+    if not(style['type'] == doctype):
+        return('error: doctypes do not match')
+    myfile.close()
+
+    myfile = open(name, 'w')
+    myfile.truncate(0)
+
+    if doctype == 'def':
+        myfile.write("{'type': 'def'}\n")
+        for x in mydic:
+            myfile.write("'{0}': '{1}',\n".format(x, mydic[x]))
+
+    myfile.close()
+
+def edit(mydic, key, rslt=None):
+    if not(rslt):
+        mydic.__delitem__(key)
+    else:
+        mydic[key] = rslt
