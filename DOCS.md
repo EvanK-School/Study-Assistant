@@ -1,5 +1,5 @@
 # Documentation
-### 1. Definitions
+### 1. Definition Functions
 
 ```python
 choice(mydic, string, num=4)
@@ -22,6 +22,6 @@ impdoc(name, doctype=<*>)
 1. `name`    - The string that is the name of the document. Easy to understand
 2. `doctype` - An optional argument that changes based on the file **impdoc** is imported from - it can be a specific type or `'auto'`matic.
 
-### 2. Separate Markup Documents
+### 3. Separate Markup Documents
 
 Feature has not been added yet.

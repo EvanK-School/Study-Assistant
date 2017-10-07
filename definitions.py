@@ -30,6 +30,7 @@ def choice(mydic, string=None, num=4):
     if not(rslt in choices):
         index = rd.randint(0, 3)
         choices[index] = rslt
+
     while True:
         print('Define: {0}'.format(string))
         print()
@@ -82,8 +83,8 @@ def expdoc(mydic, name, doctype='def'):
     myfile = open(name, 'w')
     myfile.truncate(0)
 
+    myfile.write("{'type': '{}}'}\n".format(doctype))
     if doctype == 'def':
-        myfile.write("{'type': 'def'}\n")
         for x in mydic:
             myfile.write("'{0}': '{1}',\n".format(x, mydic[x]))
 
