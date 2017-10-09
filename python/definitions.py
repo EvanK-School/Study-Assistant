@@ -58,23 +58,44 @@ def choice(mydic, string=None, num=4):
 # Note that if only definitions.py is imported,
 # will default to import definitions
 # **Note that style syntax needs to be added to DOCS.md**
-def impdoc(name, doctype='def'):
+def impdoc(name, doctype='def', pull='def'):
     myfile = open(name, 'r')
-    style = eval(myfile.readline())
+    lineZero = myfile.readline()
+    print(lineZero)
+    print(lineZero.split('{')[1].split('}')[0])
+    lineZero = '{' + (lineZero.split('{')[1].split('}')[0]) + '}'
+    style = eval(lineZero)
+    print(lineZero, style)
     if doctype == 'auto': style['type']
     if not(style['type'] == doctype):
         return('error: doctypes do not match')
 
     if doctype == 'def':
         info = ''.join(myfile.read().split('\n'))
+        myfile.close()
         info = '{' + info + '}'
         return(eval(info))
 
-    myfile.close()
+    if doctype == 'note':
+        lines = myfile.read().split('\n')
+        myfile.close()
+        if pull == 'def':
+            lines = [x for x in lines if '**:' in x]
+            info = {}
+            for x in lines:
+                index = x.split('**')[1]
+                data = ' '.join(x.split('**')[2::])
+                data = data[2::]                                    # removes ': '
+                info[index] = data
+            return(info)
 
 def expdoc(mydic, name, doctype='def'):
     myfile = open(name, 'r')
-    style = eval(myfile.readline())
+    lineZero = myfile.readline()
+    print(lineZero)
+    print(lineZero.split('{')[1].split('}')[0])
+    lineZero = '{' + (lineZero.split('{')[1].split('}')[0]) + '}'
+    style = eval(lineZero)
     if doctype == 'auto': style['type']
     if not(style['type'] == doctype):
         return('error: doctypes do not match')
@@ -83,7 +104,7 @@ def expdoc(mydic, name, doctype='def'):
     myfile = open(name, 'w')
     myfile.truncate(0)
 
-    myfile.write("{'type': '{}}'}\n".format(doctype))
+    myfile.write("[//]: ({'type': " + doctype + "})\n")
     if doctype == 'def':
         for x in mydic:
             myfile.write("'{0}': '{1}',\n".format(x, mydic[x]))

@@ -22,6 +22,11 @@ impdoc(name, doctype=<*>)
 1. `name`    - The string that is the name of the document. Easy to understand
 2. `doctype` - An optional argument that changes based on the file **impdoc** is imported from - it can be a specific type or `'auto'`matic.
 
+### 2. File Specifications
+
+1. First line must be `[//]: # ({'type': <type>})`
+    - This is used by the file reader/importer to determine document type.
+
 ### 3. Separate Markup Documents
 
 Feature has not been added yet.
