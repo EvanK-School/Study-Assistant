@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from StudyAssistan import definitions as df
+from StudyAssistant import definitions as df
 from sys import argv
 import random as rd
 import itertools as its
