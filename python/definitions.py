@@ -104,7 +104,7 @@ def expdoc(mydic, name, doctype='def'):
     myfile = open(name, 'w')
     myfile.truncate(0)
 
-    myfile.write("[//]: ({'type': " + doctype + "})\n")
+    myfile.write("[//]: ({'type': '" + doctype + "'})\n")
     if doctype == 'def':
         for x in mydic:
             myfile.write("'{0}': '{1}',\n".format(x, mydic[x]))
