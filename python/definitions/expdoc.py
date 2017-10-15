@@ -7,7 +7,7 @@ def expdoc(mydic, name, doctype='def'):
     print(lineZero.split('{')[1].split('}')[0])
     lineZero = '{' + (lineZero.split('{')[1].split('}')[0]) + '}'
     style = eval(lineZero)
-    if doctype == 'auto': style['type']
+    if doctype == 'auto': doctype = style['type']
     if not(style['type'] == doctype):
         return('error: doctypes do not match')
     myfile.close()

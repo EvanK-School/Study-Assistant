@@ -11,7 +11,7 @@ def impdoc(name, doctype='def', pull='def'):
     lineZero = '{' + (lineZero.split('{')[1].split('}')[0]) + '}'
     style = eval(lineZero)
     print(lineZero, style)
-    if doctype == 'auto': style['type']
+    if doctype == 'auto': doctype = style['type']
     if not(style['type'] == doctype):
         return('error: doctypes do not match')
 
