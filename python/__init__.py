@@ -1,3 +1,3 @@
 #!/usr/bin/env python
 
-import StudyAssistant.definitions
+from StudyAssistant.definitions.expdoc import expdoc

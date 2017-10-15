@@ -1,0 +1,6 @@
+[//]: ({'type': 'def'})
+'a': 'apple',
+'b': 'banana',
+'c': 'cherry',
+'d': 'dragon fruit',
+'e': 'elderberry',
