@@ -25,9 +25,18 @@ def impdoc(name, doctype='def', pull='def'):
         lines = myfile.read().split('\n')
         myfile.close()
         if pull == 'def':
-            lines = [x for x in lines if '**:' in x]
+            sets = []
+            for x, y in enumerate(lines):
+                if '**:' in y:
+                    if y.strip()[0:2] == '- ':
+                        sets.append(y.strip()[2:])
+                    else:
+                        sets.append(y.strip())
+                elif '**:' in lines[x-1] and y.strip()[0:2] != '- ':
+                    print(True)
+                    sets[-1] = sets[-1] + ' ' + y.strip()
             info = {}
-            for x in lines:
+            for x in sets:
                 index = x.split('**')[1]
                 data = ' '.join(x.split('**')[2::])
                 data = data[2::]                                    # removes ': '
