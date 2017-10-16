@@ -1,11 +1,21 @@
 [//]: # (def)   - define a term or term list
 [//]: # (mat)   - define a math equation/expression
-[//]: # (que)   - question (inside "()" but can be
-                  multiple lines)
-[//]: # (ans)   - example answer to previous question
 
 [//]: # (li)	- start "notable" list * name="$name" can be added inside () *
-[//]: # (/li)	- end "notable" list 
+[//]: # (/li)	- end "notable" list
 
 [//]: # (stylesheet=<path-to-seperate-sheet) - reference seperate note-markup sheet
 [//]: # (CommentID=<ID>)                     - to be used with seperate stylesheet (see DOCS)
+
+Definition Stuff:
+  y: {x} - defines x as a list of alternate names for y
+  y: (x) - defines x as a list of hints for the definition of y
+  y: [x] - defines x as a list of alternate or add-on definitions of y
+
+Questions:
+  Format - "- Question: <type>: <query>
+            - Answer: <answer>"
+  **Shouldn't have to match up in indent.**
+  Ideas for types:
+    - T/F: "True or False" or "T/F"
+        - Answer ["True", "False"] or ["T", "F"]
